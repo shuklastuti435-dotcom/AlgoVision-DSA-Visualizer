@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoVision | DSA Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="logo">Algo<span>Vision</span></div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#searching">Searching</a>
+        <a href="#sorting">Sorting</a>
+        <a href="#stack-visualizer">Data Structures</a>
+    </div>
+
+    <a href="#searching" class="nav-btn">Explore DSA ↗</a>
+</nav>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <div class="hero-badge">
+            ✨ Learn DSA Visually
+        </div>
+
+        <h1>
+            Understand DSA.<br>
+            <span>Visualize Success.</span>
+        </h1>
+
+        <p>
+            Master Data Structures and Algorithms through
+            interactive visualizations. Learn step by step,
+            understand every move, and build your logic.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#searching" class="primary-btn">
+                Start Exploring →
+            </a>
+
+            <a href="#sorting" class="secondary-btn">
+                Explore Algorithms
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <h3>04+</h3>
+                <p>Visualizers</p>
+            </div>
+
+            <div>
+                <h3>Interactive</h3>
+                <p>Learning</p>
+            </div>
+
+            <div>
+                <h3>Step by Step</h3>
+                <p>Explanations</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="visual-card">
+            <div class="visual-card-header">
+                <span>Binary Search</span>
+                <span class="live-dot">● Live</span>
+            </div>
+
+            <div class="visual-array">
+                <div>10</div>
+                <div>20</div>
+                <div class="highlight">30</div>
+                <div>40</div>
+                <div>50</div>
+            </div>
+
+            <div class="visual-info">
+                <span>Left: 0</span>
+                <span>Mid: 2</span>
+                <span>Right: 4</span>
+            </div>
+
+            <div class="visual-progress">
+                <div></div>
+            </div>
+
+            <p class="visual-caption">
+                Finding the target efficiently...
+            </p>
+        </div>
+
+        <div class="floating-badge badge-one">
+            ⚡ O(log n)
+        </div>
+
+        <div class="floating-badge badge-two">
+            💜 Learn by Doing
+        </div>
+    </div>
+
+</section>
+
+<section class="algorithms">
+    <h2>Explore Algorithms</h2>
+
+    <div class="cards">
+
+        <div class="card" id="searching">
+            <h3>🔍 Searching</h3>
+            <p>Find elements in an array.</p>
+            <button onclick="showMessage('Binary Search')">
+                Binary Search →
+            </button>
+        </div>
+
+        <div class="card" id="sorting">
+            <h3>📊 Sorting</h3>
+            <p>Arrange elements in order.</p>
+            <button onclick="showMessage('Bubble Sort')">
+                Bubble Sort →
+            </button>
+        </div>
+
+        <div class="card" id="structures">
+            <h3>📚 Data Structures</h3>
+            <p>Explore common data structures.</p>
+            <button onclick="showMessage('Stack')">
+                Stack →
+            </button>
+        </div>
+
+    </div>
+</section>
+<section class="visualizer" id="binary-search">
+
+```
+<h2>Binary Search Visualizer</h2>
+
+<p class="description">
+    Visualize how Binary Search finds an element in a sorted array.
+</p>
+
+<div class="input-area">
+    <label for="arrayInput">Enter sorted array:</label>
+    <input
+        type="text"
+        id="arrayInput"
+        value="10,20,30,40,50,60,70"
+        placeholder="10,20,30,40,50"
+    >
+
+    <label for="targetInput">Target:</label>
+    <input
+        type="number"
+        id="targetInput"
+        value="50"
+        placeholder="Enter target"
+    >
+
+    <button id="startBtn">Start Search</button>
+</div>
+
+<div id="arrayContainer" class="array-container"></div>
+
+<div class="legend">
+    <span>🔵 Start</span>
+    <span>🟣 Mid</span>
+    <span>🔴 End</span>
+    <span>🟢 Found</span>
+</div>
+
+<div class="controls">
+    <button id="prevBtn" disabled>← Previous</button>
+    <button id="nextBtn" disabled>Next →</button>
+    <button id="resetBtn">Reset</button>
+</div>
+
+<p id="status">Enter a target and click Start Search.</p>
+
+<div class="complexity">
+    <h3>Algorithm Complexity</h3>
+    <p>Time Complexity: O(log n)</p>
+    <p>Space Complexity: O(1)</p>
+</div>
+
+
+</section>
+<section class="visualizer" id="bubble-sort">
+    <h2>Bubble Sort Visualizer</h2>
+
+```
+<p class="description">
+    Watch how Bubble Sort compares and swaps adjacent elements
+    to sort an array.
+</p>
+
+<div class="input-area">
+    <label for="sortArrayInput">Enter array:</label>
+
+    <input
+        type="text"
+        id="sortArrayInput"
+        value="50,30,70,10,40"
+        placeholder="50,30,70,10,40"
+    >
+
+    <button id="sortStartBtn">Start Sorting</button>
+</div>
+
+<div id="sortArrayContainer" class="array-container"></div>
+
+<div class="legend">
+    <span>🟣 Comparing</span>
+    <span>🟢 Sorted</span>
+</div>
+
+<div class="controls">
+    <button id="sortPrevBtn" disabled>← Previous</button>
+    <button id="sortNextBtn" disabled>Next →</button>
+    <button id="sortResetBtn">Reset</button>
+</div>
+
+<p id="sortStatus">Enter an array and click Start Sorting.</p>
+
+<div class="complexity">
+    <h3>Algorithm Complexity</h3>
+    <p>Time Complexity: O(n²) in the average and worst cases</p>
+    <p>Space Complexity: O(1) auxiliary space</p>
+</div>
+```
+
+</section>
+<!-- Stack Visualizer -->
+
+<section class="visualizer" id="stack-visualizer">
+
+```
+<h2>📚 Stack Visualizer</h2>
+
+<p class="description">
+    Understand the LIFO principle: Last In, First Out.
+</p>
+
+<div class="input-area">
+    <input
+        type="text"
+        id="stackInput"
+        placeholder="Enter an element"
+    >
+
+    <button id="pushBtn">Push</button>
+    <button id="popBtn">Pop</button>
+</div>
+
+<div id="stackContainer" class="stack-container"></div>
+
+<p id="stackStatus">Enter an element and click Push.</p>
+```
+
+</section>
+
+<!-- Queue Visualizer -->
+
+<section class="visualizer" id="queue-visualizer">
+
+```
+<h2>🚶 Queue Visualizer</h2>
+
+<p class="description">
+    Understand the FIFO principle: First In, First Out.
+</p>
+
+<div class="input-area">
+    <input
+        type="text"
+        id="queueInput"
+        placeholder="Enter an element"
+    >
+
+    <button id="enqueueBtn">Enqueue</button>
+    <button id="dequeueBtn">Dequeue</button>
+</div>
+
+<div id="queueContainer" class="queue-container"></div>
+
+<p id="queueStatus">Enter an element and click Enqueue.</p>
+```
+
+</section>
+<!-- Linked List Visualizer -->
+
+<section class="visualizer" id="linked-list">
+
+```
+<h2>🔗 Linked List Visualizer</h2>
+
+<p class="description">
+    Learn how nodes are connected and perform insertion,
+    deletion, and traversal operations.
+</p>
+
+<div class="input-area">
+
+    <input
+        type="number"
+        id="nodeValue"
+        placeholder="Enter node value"
+    >
+
+    <input
+        type="number"
+        id="nodePosition"
+        placeholder="Position (0, 1, 2...)"
+        min="0"
+        value="0"
+    >
+
+    <button id="insertNodeBtn">Insert Node</button>
+
+    <button id="deleteNodeBtn">Delete Node</button>
+
+    <button id="traverseBtn">Traverse</button>
+
+</div>
+
+<div class="linked-list-container">
+
+    <span class="head-label">HEAD →</span>
+
+    <div id="linkedListNodes" class="linked-list-nodes"></div>
+
+    <span class="null-label">NULL</span>
+
+</div>
+
+<p id="linkedListStatus">
+    Enter a value and click Insert Node.
+</p>
+
+<div class="complexity">
+
+    <h3>Algorithm Complexity</h3>
+
+    <p>Access: O(n)</p>
+
+    <p>Insertion at head: O(1)</p>
+
+    <p>Deletion by position: O(n)</p>
+
+</div>
+```
+
+</section>
+<!-- Binary Tree Visualizer -->
+
+<section class="visualizer" id="binary-tree">
+
+    <h2>🌳 Binary Tree Visualizer</h2>
+
+    <p class="description">
+        Insert nodes and visualize a Binary Search Tree (BST).
+    </p>
+
+    <div class="input-area">
+
+        <input
+            type="number"
+            id="treeValue"
+            placeholder="Enter node value"
+        >
+
+        <button id="insertTreeBtn">Insert Node</button>
+
+        <button id="searchTreeBtn">Search Node</button>
+
+        <button id="resetTreeBtn">Reset Tree</button>
+
+    </div>
+
+    <div id="treeContainer" class="tree-container">
+
+        <p class="tree-placeholder">
+            Insert a value to create your Binary Search Tree.
+        </p>
+
+    </div>
+
+    <p id="treeStatus">
+        Your tree is empty.
+    </p>
+
+    <div class="complexity">
+
+        <h3>Algorithm Complexity</h3>
+
+        <p>Search: O(log n) average, O(n) worst case</p>
+
+        <p>Insertion: O(log n) average, O(n) worst case</p>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
